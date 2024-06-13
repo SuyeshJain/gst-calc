@@ -1,0 +1,156 @@
+:root {
+    --text-color: rgb(0, 0, 0);
+    --title-color: rgb(8, 2, 2);
+    --background: url(img/gst.jpg);
+    --card-background: lightgrey;
+    --card-shadow: 0 0.5rem 0.5rem rgb(0, 0, 0);
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bruno Ace', cursive;
+    color: var(--text-color);
+    outline: none;
+}
+
+html,
+body {
+    height: 80%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    background: var(--background);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    height: 80%;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding: 1rem;
+    grid-row-gap: 1rem;
+}
+
+.card {
+    min-height: 88px;
+    border-radius: 0.5rem;
+    position: relative;
+    background: var(--card-background);
+    box-shadow: var(--card-shadow);
+}
+
+.card .title {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.5rem;
+    font-weight: 900;
+    font-size: 1.75rem;
+    color: var(--title-color);
+}
+
+.card input {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2.75rem;
+    font-weight: 100;
+    text-align: right;
+    width: calc(100% - 1rem);
+}
+
+nput[type="number"]::-webkit-inner-spin-button,
+nput[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.gst {
+    min-height: 88px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    overflow: hidden;
+}
+
+.gst button {
+    border: none;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+    background: transparent;
+}
+
+.gst .group {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.gst span:first-child {
+    align-self: center;
+    font-size: 3.5rem;
+}
+
+.gst span:last-child {
+    align-self: center;
+}
+
+.gst::after {
+    content: "GST";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--title-color);
+    font-weight: bold;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    font-size: 25px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.footer {
+    position:sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bruno Ace', cursive;
+    font-weight: bolder;
+    color: beige;
+
+}
+
+@media screen and (min-width: 426px) {
+    .wrapper {
+        justify-self: center;
+        width: 425px;
+    }
+}
